@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 5000px;
+        background-image: linear-gradient(#555, #aaa);
+      }
+
+      .content {
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 3000px;
+      }
+
+      .scroll-contents {
+        opacity: 0;
+        transform: translatex(-200px);
+        transition: 500ms;
+      }
+
+      .scroll-contents.active {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quis ducimus
+      aspernatur, modi enim blanditiis sunt nemo explicabo dolorem, vitae
+      officia dolores excepturi impedit quasi quam porro debitis doloribus vel!
+    </div>
+    <div class="content scroll-contents">나타난다!</div>
+
+    <script>
+      const scrollcontent = document.querySelector(".scroll-contents");
+
+      window.addEventListener("scroll", (e) => {
+        console.log(
+          scrollcontent.getBoundingClientRect().top - window.innerHeight < 0
+        );
+        if (
+          scrollcontent.getBoundingClientRect().top - window.innerHeight <
+          0
+        ) {
+          scrollcontent.classList.add("active");
+        } else {
+          scrollcontent.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
