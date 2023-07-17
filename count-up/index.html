@@ -8,13 +8,35 @@
   <body>
     <p class="count-place">0</p>
     <script>
-      const goal = 123456;
-      const countPlace = document.querySelector(".count-place");
+      // let timer = 0;
 
-      for (let i = 0; i < goal; i++) {
+      // while (true) {
+      //   let timer = 0;
+      //   setTimeout(() => {
+      //     countPlace.innerText = timer;
+      //   }, timer);
+      //   timer += 100;
+      // }
+
+      const countPlace = document.querySelector(".count-place");
+      const goal = 123456;
+      const countDuration = 5000;
+      const framePerSec = 60;
+
+      function easeOutCubic(x) {
+        return 1 - Math.pow(1 - x, 3);
+      }
+
+      const 실행횟수 = (countDuration * framePerSec) / 1000;
+
+      for (let i = 0; i < 실행횟수; i++) {
+        const 진행도 = i / (실행횟수 - 1);
         setTimeout(() => {
-          countPlace.innerText = i;
-        }, (i / goal) * 5000);
+          countPlace.innerText = parseInt(easeOutCubic(진행도) * goal);
+        }, (countDuration / 실행횟수) * (i + 1));
+
+        console.log(진행도);
+        console.log("현재값 : " + easeOutCubic(진행도) * goal);
       }
     </script>
   </body>
