@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* body {
+        overflow: hidden;
+      } */
+      #test {
+        height: 5000px;
+        background: linear-gradient(#aaa, #222);
+        position: relative;
+      }
+
+      #영상 {
+        width: 100vw;
+        height: 100vh;
+        background-color: yellow;
+        position: absolute;
+        transform-origin: center 70%;
+        transition: 0.5s;
+        transform: scaleX(0.9) scaleY(0.25);
+      }
+
+      #영상.스크롤 {
+        animation: to-big 2s ease both alternate infinite;
+      }
+
+      #영상.정지 {
+        animation-play-state: paused;
+      }
+
+      @keyframes to-big {
+        from {
+          transform: scaleX(0.9) scaleY(0.25);
+        }
+        50% {
+          transform: scaleX(1) scaleY(0.25);
+        }
+        100% {
+          transform: scaleX(1) scaleY(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="test">
+      <div id="영상"></div>
+    </div>
+    <script>
+      const 영상 = document.getElementById("영상");
+
+      let playstate = false;
+
+      window.addEventListener(
+        "mousewheel",
+        (e) => {
+          if (e.wheeldelta > 0) {
+            //마우스휠 위로
+          } else {
+            // 마우스휠 아래로
+
+            if (window.scrollY === 0 && !playstate) {
+              e.preventDefault();
+              영상.classList.add("스크롤");
+              setTimeout(() => {
+                영상.classList.add("정지");
+              }, 2000);
+            }
+          }
+        },
+        { passive: false }
+      );
+    </script>
+  </body>
+</html>
