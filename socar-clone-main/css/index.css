@@ -184,6 +184,7 @@ h1 > a {
 
 .count-up {
   font-weight: 600;
+  transition: 2s;
 }
 
 .incline {
