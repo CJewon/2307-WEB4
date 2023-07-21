@@ -1,62 +1,35 @@
-const headerScroll = document.querySelector("header");
+const header = document.querySelector("header");
 let 이전좌표 = 0;
-
 window.addEventListener("scroll", () => {
-  let scrollY = window.scrollY;
-  if (scrollY >= 100) {
-    headerScroll.classList.add("scrolled");
+  if (window.scrollY >= 100) {
+    header.classList.add("scrolled");
   } else {
-    headerScroll.classList.remove("scrolled");
+    header.classList.remove("scrolled");
   }
 
-  if (이전좌표 < scrollY) {
-    headerScroll.classList.add("hide");
+  //scroll 이벤트리스너일때
+  //스크롤을 올렸는지 내렸는지 파악하려면
+  //변수를 하나 선언 해야 한다.
+  if (이전좌표 < window.scrollY) {
+    header.classList.add("hide");
   } else {
-    headerScroll.classList.remove("hide");
+    header.classList.remove("hide");
   }
 
-  이전좌표 = scrollY;
+  이전좌표 = window.scrollY;
 });
 
-const countScroll = document.querySelector("#start-together");
-const counter = document.querySelector(".count-up");
-const goal = 8286684;
-const countDuration = 1000;
-const framePerSec = 144;
-let bool = false;
+const scrollContent = document.querySelectorAll(".advantage > *");
+makeScrollContents(scrollContent);
+
+makeCountUp(document.querySelector(".count-up"), 8985351, 2000, 60);
+
+const incline = document.querySelector(".incline");
+
+incline.style.left = "50%";
 
 window.addEventListener("scroll", () => {
-  const 시작좌표 = countScroll.getBoundingClientRect().top - window.innerHeight;
-
-  console.log(
-    "탑",
-    countScroll.getBoundingClientRect().top - window.innerHeight
-  );
-  console.log(
-    "바텀",
-    countScroll.getBoundingClientRect().bottom - window.innerHeight
-  );
-
-  const sectionHeight = countScroll.scrollHeight;
-  const 시작좌표백분율 = -(시작좌표 / sectionHeight) * 100;
-  // console.log(시작좌표백분율);
-
-  if (시작좌표백분율 >= 27 && 시작좌표백분율 <= 29) {
-    countUp();
+  if (incline.getBoundingClientRect().top - window.innerHeight < 0) {
+    incline.style.left = "0%";
   }
 });
-
-function easeOutCubic(x) {
-  return 1 - Math.pow(1 - x, 3);
-}
-
-const 진행횟수 = (countDuration * framePerSec) / 1000;
-
-function countUp() {
-  for (let i = 0; i < 진행횟수; i++) {
-    const 진행도 = i / (진행횟수 - 1);
-    setTimeout(() => {
-      counter.innerText = parseInt(easeOutCubic(진행도) * goal);
-    }, (countDuration / 진행횟수) * (i + 1));
-  }
-}
