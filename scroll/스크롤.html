@@ -85,7 +85,6 @@
       alt=""
     />
     <script>
-      const scrollContent = document.getElementsByClassName("scroll-contents");
       const scrollOpacity = document.getElementsByClassName("scroll-opacity");
       const innerHeight = window.innerHeight;
 
@@ -99,18 +98,27 @@
 
         // -300에 나타나기 시작해서
         // -900에 완전히 나타나게 하고싶다!
-
-        for (let i = 0; i < scrollContent.length; i++) {
-          console.log(
-            scrollContent[i].getBoundingClientRect().top - innerHeight < 0
-          );
-          if (scrollContent[i].getBoundingClientRect().top - innerHeight < 0) {
-            scrollContent[i].classList.add("active");
-          } else {
-            scrollContent[i].classList.remove("active");
-          }
-        }
       });
+
+      makeScrollContents(document.getElementsByClassName("scroll-contents"));
+
+      function makeScrollContents(scrollContent) {
+        window.addEventListener("scroll", (e) => {
+          for (let i = 0; i < scrollContent.length; i++) {
+            console.log(
+              scrollContent[i].getBoundingClientRect().top - innerHeight < 0
+            );
+            if (
+              scrollContent[i].getBoundingClientRect().top - innerHeight <
+              0
+            ) {
+              scrollContent[i].classList.add("active");
+            } else {
+              scrollContent[i].classList.remove("active");
+            }
+          }
+        });
+      }
     </script>
   </body>
 </html>
