@@ -33,3 +33,11 @@ window.addEventListener("scroll", () => {
     incline.style.left = "0%";
   }
 });
+
+const hambergerButton = document.querySelector(".hamberger");
+const hambergerClick = document.querySelector(".hamberger-click");
+
+hambergerButton.addEventListener("click", () => {
+  hambergerButton.classList.add("active");
+  hambergerClick.classList.add("active");
+});
