@@ -22,7 +22,7 @@ window.addEventListener("scroll", () => {
 const scrollContent = document.querySelectorAll(".advantage > *");
 makeScrollContents(scrollContent);
 
-makeCountUp(document.querySelector(".count-up"), 8985351, 2000, 60);
+makeCountUp(document.querySelector(".count-up"), 8985351, 4000, 24);
 
 const incline = document.querySelector(".incline");
 
@@ -36,8 +36,13 @@ window.addEventListener("scroll", () => {
 
 const hambergerButton = document.querySelector(".hamberger");
 const hambergerClick = document.querySelector(".hamberger-click");
+const hambergerNav = document.querySelector(".hamberger-nav");
 
 hambergerButton.addEventListener("click", () => {
   hambergerButton.classList.add("active");
   hambergerClick.classList.add("active");
+
+  setTimeout(() => {
+    hambergerNav.style.transform = `none`;
+  }, 1);
 });

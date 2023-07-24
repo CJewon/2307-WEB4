@@ -104,19 +104,19 @@ h1 > a {
   transition: 0.3s;
 }
 
-.hamberger::before {
-  transform: translate(4px, 5px);
-}
-
 .hamberger::after {
   transform: translate(-4px, -5px);
 }
 
-.hamberger.actve::before {
+.hamberger::before {
+  transform: translate(4px, 5px);
+}
+
+.hamberger.active::before {
   transform: rotate(45deg);
 }
 
-.hamberger.actve::after {
+.hamberger.active::after {
   transform: rotate(-45deg);
 }
 
@@ -368,6 +368,7 @@ footer nav {
   width: 100%;
   height: 100vh;
   background-color: #000000dd;
+  display: none;
 }
 
 .hamberger-nav {
@@ -378,6 +379,9 @@ footer nav {
   background-color: #28323c;
   height: 100vh;
   padding: 0 32px;
+
+  transition: 0.5s;
+  transform: translateX(100%);
 }
 
 .hamberger-click.active {
@@ -385,7 +389,7 @@ footer nav {
 }
 
 .hamberger-click.active > .hamberger-nav {
-  transform: none;
+  /* transform: none; */
 }
 
 .hamberger-nav > div {
