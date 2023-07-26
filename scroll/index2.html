@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mouse Wheel Scroll</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        height: 2000px;
+      }
+      .section {
+        height: 100vh;
+      }
+
+      .color1 {
+        background-color: red;
+      }
+
+      .color2 {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Content to be scrolled -->
+      <div class="section color1"></div>
+      <div class="section color2"></div>
+    </div>
+
+    <script>
+      window.addEventListener("mousewheel", (event) => {
+        // Cross-browser support for deltaY
+        const deltaY = event.deltaY || event.wheelDelta;
+        console.log(event.deltaY);
+        console.log(event.wheelDelta);
+        console.log(deltaY);
+
+        if (deltaY > 0) {
+          // Scroll down
+          window.scrollBy(0, innerHeight); // You can adjust the scroll amount as per your preference
+        } else if (deltaY < 0) {
+          // Scroll up
+          window.scrollBy(0, -innerHeight); // You can adjust the scroll amount as per your preference
+        }
+
+        // Prevent default scrolling behavior of the page
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>
