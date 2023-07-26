@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .page {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .color1 {
+        background-color: red;
+      }
+
+      .color2 {
+        background-color: pink;
+      }
+
+      .color3 {
+        background-color: aqua;
+      }
+
+      .color4 {
+        background-color: burlywood;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page color1"></div>
+      <div class="page color2"></div>
+      <div class="page color3"></div>
+      <div class="page color4"></div>
+    </div>
+
+    <script>
+      let index = 0;
+
+      window.addEventListener(
+        "mousewheel",
+        (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+        },
+        { passive: false }
+      );
+    </script>
+  </body>
+</html>
