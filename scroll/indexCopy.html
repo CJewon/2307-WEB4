@@ -44,7 +44,6 @@
       let index = 0;
       const pageMove = document.querySelector(".container");
 
-      console.log(WheelEvent.deltaY);
       window.addEventListener(
         "mousewheel",
         (e) => {
@@ -53,7 +52,7 @@
             top: window.innerHeight * (index + 1),
             behavior: "smooth",
           });
-          console.log(WheelEvent.deltaY);
+          console.log(e.deltaY);
         },
         { passive: false }
       );
