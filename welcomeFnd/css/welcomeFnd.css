@@ -1,0 +1,36 @@
+body {
+  position: relative;
+}
+
+header {
+  width: 100vw;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 72px;
+  background-color: #222;
+  color: white;
+  line-height: 100px;
+  position: fixed;
+}
+
+.header_menu_con {
+  display: flex;
+  gap: 32px;
+}
+
+.header_menu {
+  font-weight: bold;
+}
+
+.menu_icon > span {
+  width: 14px;
+  height: 10px;
+  background-color: white;
+}
+
+.header_background {
+  width: 100vw;
+  height: 100vh;
+}
