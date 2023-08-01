@@ -9,6 +9,7 @@ header {
   background-color: transparent;
   position: fixed;
   overflow: hidden;
+  z-index: 100;
 }
 
 .hidden {
@@ -76,11 +77,16 @@ a {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  z-index: 1;
 }
 
 /* .header_background_con {
   padding-left: 104px;
 } */
+
+.header_background_con {
+  z-index: 10;
+}
 
 .header_background_con > h1 {
   font-size: 48px;
