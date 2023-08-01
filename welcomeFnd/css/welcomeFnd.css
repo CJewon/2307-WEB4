@@ -1,15 +1,18 @@
 body {
   position: relative;
+  /* overflow: hidden; */
 }
 
 header {
   width: 100vw;
   height: 100px;
-  background-color: #222;
+  background-color: transparent;
   position: fixed;
+  overflow: hidden;
 }
 
 .hidden {
+  display: none;
   opacity: 0;
 }
 
@@ -44,8 +47,8 @@ a {
   height: 100%;
 }
 
-.header_menu_con a ul {
-}
+
+
 
 .menu_icon {
   display: flex;
@@ -63,14 +66,16 @@ a {
 .header_background {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   /* display: flex;
   flex-direction: column;
   justify-content: center; */
 }
 
 .main_video {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* .header_background_con {
