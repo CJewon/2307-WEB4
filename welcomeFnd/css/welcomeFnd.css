@@ -1,10 +1,12 @@
-body {
-  position: relative;
-  /* overflow: hidden; */
+
+
+h2 {
+  font-size: 32px;
+  font-weight: bold;
 }
 
 header {
-  width: 100vw;
+  width: calc( 100vw - (100vw - 100%));
   height: 100px;
   background-color: transparent;
   position: fixed;
@@ -65,27 +67,35 @@ a {
 }
 
 .header_background {
-  width: 100vw;
+  width: calc( 100vw - (100vw - 100%));
   height: 100vh;
   overflow: hidden;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
+  position: relative;
+ 
+
+
 }
 
 .main_video {
-  width: 100vw;
+  width: calc( 100vw - (100vw - 100%));
   height: 100vh;
-  overflow: hidden;
-  z-index: 1;
+  object-fit: cover;
+  display: block;
 }
 
-/* .header_background_con {
-  padding-left: 104px;
-} */
+
 
 .header_background_con {
-  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 88px;
+  color: white;
+  gap: 16px;
 }
 
 .header_background_con > h1 {
@@ -101,7 +111,7 @@ a {
 }
 
 .welcome_explain {
-  width: 100vw;
+  width: calc( 100vw - (100vw - 100%));
   height: 100vh;
 }
 
@@ -116,4 +126,75 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 200px;
+}
+
+.welcome_explain_list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.welcome_explain_list figure {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.welcome_explain_list figcaption {
+  font-weight: 500;
+}
+
+.count_up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.count_up span {
+  font-size: 56px;
+}
+
+
+
+.count_up p {
+  color: #4b4a4a;
+  font-weight: 600;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.train_effect {
+  width: calc( 100vw - (100vw - 100%));
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.train_effect p {
+  font-weight: bold;
+  color: #ebba61;
+  font-size: 256px;
+}
+
+.main_con {
+  padding: 0 64px;
+  background-color: pink;
+}
+
+.ictservice_img {
+  width: 200px;
+  height: 100px;
+}
+
+.manage_img {
+  width: 200px;
+  height: 100px;
 }
