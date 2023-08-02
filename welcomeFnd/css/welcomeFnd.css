@@ -185,8 +185,11 @@ a {
 }
 
 .main_con {
-  padding: 0 64px;
-  background-color: pink;
+  padding: 0 112px;
+}
+
+.main_con > h2 {
+  line-height: 1.8;
 }
 
 .ictservice_img {
@@ -198,3 +201,5 @@ a {
   width: 200px;
   height: 100px;
 }
+
+
