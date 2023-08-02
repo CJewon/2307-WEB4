@@ -190,6 +190,7 @@ a {
 
 .main_con > h2 {
   line-height: 1.8;
+  color: #222;
 }
 
 .ictservice_img {
@@ -200,6 +201,25 @@ a {
 .manage_img {
   width: 200px;
   height: 100px;
+}
+
+.information_nav > ul {
+  display: flex;
+}
+
+.information_nav > ul> li:first-child {
+  margin-top: 150px;
+  width: 40%;
+}
+
+.information_list h3 {
+  color: #222;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.information_list p {
+  color: #222;
 }
 
 
