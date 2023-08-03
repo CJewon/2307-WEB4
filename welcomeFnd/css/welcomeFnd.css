@@ -196,11 +196,13 @@ a {
 .ictservice_img {
   width: 200px;
   height: 100px;
+  object-fit: cover;
 }
 
 .manage_img {
   width: 200px;
   height: 100px;
+  object-fit: cover;
 }
 
 .information_nav > ul {
@@ -210,6 +212,12 @@ a {
 .information_nav > ul> li:first-child {
   margin-top: 150px;
   width: 40%;
+  background-color: pink;
+}
+
+.information_nav > ul> li:last-child {
+  width: 60%;
+  background-color: #ebba61;
 }
 
 .information_list h3 {
